@@ -38,6 +38,9 @@ class MainFragment: Fragment() {
             role = Role.BACKEND_DEVELOPER.value
         }
 
+        programmers.add(programmerA)
+        programmers.add(programmerB)
+
         for (programmer in programmers) {
             Log.i("###log", "forObject")
             Log.i("###log", "Name : ${programmer.name}")
@@ -59,8 +62,6 @@ class MainFragment: Fragment() {
             }
         }
 
-        programmers.add(programmerA)
-        programmers.add(programmerB)
         val programmerAdapter = ProgrammerAdapter(programmers)
 
         recyclerView.adapter = programmerAdapter
