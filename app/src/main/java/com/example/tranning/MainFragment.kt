@@ -14,6 +14,17 @@ import com.example.tranning.model.Programmer
 
 class MainFragment: Fragment() {
 
+    companion object {
+        const val PROGRESSBARTITILE = "PROGRESSBARTITILE"
+        fun newInstance(option: String): MainFragment {
+            val args = Bundle()
+            args.putString(PROGRESSBARTITILE, option)
+            val mainFragment = MainFragment()
+            mainFragment.arguments = args
+            return mainFragment
+        }
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -24,9 +35,11 @@ class MainFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val title = arguments?.getString(PROGRESSBARTITILE)
+
         val recyclerView: RecyclerView = view.findViewById(R.id.recycler_view)
         val changeText: TextView = view.findViewById(R.id.change_text)
-        changeText.text = "Fragment"
+        changeText.text = title
 
         val programmers = ArrayList<Programmer>()
         val programmerA = Programmer()
