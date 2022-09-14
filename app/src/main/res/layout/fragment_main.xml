@@ -10,7 +10,29 @@
         android:id="@+id/change_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="change text" />
+        android:text="change text"
+        android:textSize="20sp" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_launcher_background" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:text="Frame Demo"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+    </FrameLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
